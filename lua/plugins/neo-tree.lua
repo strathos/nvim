@@ -2,8 +2,9 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   cmd = "Neotree",
   opts = {
+    sort_case_insensitive = true,
     filesystem = {
-      bind_to_cwd = false,
+      bind_to_cwd = true,
       follow_current_file = true,
       use_libuv_file_watcher = true,
       filtered_items = {
@@ -48,8 +49,8 @@ return {
       },
       git_status = {
         symbols = {
-          renamed   = "󰁕",
-          unstaged  = "󰄱",
+          renamed = "󰁕",
+          unstaged = "󰄱",
         },
       },
     },
@@ -70,8 +71,8 @@ return {
         Struct = { icon = "󰌗", hl = "Type" },
         Operator = { icon = "󰆕", hl = "Operator" },
         TypeParameter = { icon = "󰊄", hl = "Type" },
-        StaticMethod = { icon = '󰠄 ', hl = 'Function' },
-      }
+        StaticMethod = { icon = "󰠄 ", hl = "Function" },
+      },
     },
     source_selector = {
       winbar = true,
