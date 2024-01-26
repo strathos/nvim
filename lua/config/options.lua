@@ -4,7 +4,55 @@
 
 local opt = vim.opt
 
-opt.clipboard = { "unnamed", "unnamedplus" }
+opt.backup = false
+opt.clipboard = "unnamedplus"
+opt.completeopt = { "menuone", "noselect" }
+opt.conceallevel = 0
+opt.showmode = false
+opt.smartcase = true
+opt.smartindent = true
+opt.splitbelow = true
+opt.splitright = true
+opt.swapfile = false
+opt.termguicolors = true
+opt.undofile = true
+opt.updatetime = 100
+opt.writebackup = false
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.cursorline = true
+opt.number = true
+opt.relativenumber = true
+opt.ruler = false
+opt.laststatus = 3
+opt.showcmd = false
+opt.signcolumn = "yes"
+opt.wrap = false
+opt.scrolloff = 0
+opt.sidescrolloff = 8
+opt.title = false
+
+opt.fillchars = opt.fillchars + "eob: "
+opt.fillchars:append {
+  stl = " ",
+}
+
+opt.shortmess:append "c"
+
+vim.cmd "set whichwrap+=<,>,[,],h,l"
+vim.cmd [[set iskeyword+=-]]
+
+vim.g.netrw_banner = 0
+vim.g.netrw_mouse = 2
+
+vim.g.autoformat = false
+
+opt.clipboard = {
+  "unnamed",
+  "unnamedplus"
+}
+
 if vim.fn.has("wsl") == 1 then
   vim.g.clipboard = {
     name = "WslClipboard",
