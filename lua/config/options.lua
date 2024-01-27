@@ -5,7 +5,6 @@
 local opt = vim.opt
 
 opt.backup = false
-opt.clipboard = "unnamedplus"
 opt.completeopt = { "menuone", "noselect" }
 opt.conceallevel = 0
 opt.showmode = false
@@ -32,6 +31,8 @@ opt.wrap = false
 opt.scrolloff = 0
 opt.sidescrolloff = 8
 opt.title = false
+
+opt.colorcolumn = "80,120"
 
 opt.fillchars = opt.fillchars + "eob: "
 opt.fillchars:append {
