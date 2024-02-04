@@ -2,6 +2,11 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+local wk = require("which-key")
+wk.register({
+  ["<leader>m"] = { name = "+misc" },
+})
+
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 

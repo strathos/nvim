@@ -32,7 +32,7 @@ opt.scrolloff = 0
 opt.sidescrolloff = 8
 opt.title = false
 
-opt.colorcolumn = "80,120"
+opt.colorcolumn = "80"
 
 opt.fillchars = opt.fillchars + "eob: "
 opt.fillchars:append {
