@@ -4,7 +4,7 @@
 
 local wk = require("which-key")
 wk.register({
-  ["<leader>m"] = { name = "+misc" },
+  ["<leader>m"] = { name = "+misc", mode = { "n", "v" } },
 })
 
 local keymap = vim.keymap.set
