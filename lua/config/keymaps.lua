@@ -5,6 +5,7 @@
 local wk = require("which-key")
 wk.register({
   ["<leader>m"] = { name = "+misc", mode = { "n", "v" } },
+  ["<leader>gh"] = { name = "+Gitsigns", mode = { "n", "v" } },
 })
 
 local keymap = vim.keymap.set
