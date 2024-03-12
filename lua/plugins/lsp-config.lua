@@ -5,6 +5,8 @@ return {
     opts = {
       ensure_installed = {
         "shellcheck",
+        "ansible-language-server",
+        "ansible-lint",
       },
     }
   },
