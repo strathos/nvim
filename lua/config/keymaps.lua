@@ -6,6 +6,7 @@ local wk = require("which-key")
 wk.register({
   ["<leader>m"] = { name = "+misc", mode = { "n", "v" } },
   ["<leader>gh"] = { name = "+Gitsigns", mode = { "n", "v" } },
+  ["<leader>gd"] = { name = "+Diffget", mode = { "n" } },
 })
 
 local keymap = vim.keymap.set
@@ -40,3 +41,8 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 keymap("x", "p", [["_dP]])
+
+-- nvimdiff
+keymap("n", "<leader>gdr", ":diffg RE<cr>", { desc = "diffget REMOTE" })
+keymap("n", "<leader>gdb", ":diffg BA<cr>", { desc = "diffget BASE" })
+keymap("n", "<leader>gdl", ":diffg LO<cr>", { desc = "diffget LOCAL" })
