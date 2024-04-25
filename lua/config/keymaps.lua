@@ -46,3 +46,6 @@ keymap("x", "p", [["_dP]])
 keymap("n", "<leader>gDr", ":diffg RE<cr>", { desc = "diffget REMOTE" })
 keymap("n", "<leader>gDb", ":diffg BA<cr>", { desc = "diffget BASE" })
 keymap("n", "<leader>gDl", ":diffg LO<cr>", { desc = "diffget LOCAL" })
+
+-- blame
+keymap("n", "<leader>gB", ":BlameToggle<cr>", { desc = "Toggle Blame Window"})
