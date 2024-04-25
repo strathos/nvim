@@ -7,6 +7,7 @@ return {
         "shellcheck",
         "ansible-language-server",
         "ansible-lint",
+        "hadolint",
       },
     }
   },
