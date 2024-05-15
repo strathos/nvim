@@ -4,7 +4,7 @@ return {
     sort_case_insensitive = true,
     filesystem = {
       bind_to_cwd = true,
-      follow_current_file = true,
+      follow_current_file = { enabled = true },
       use_libuv_file_watcher = true,
       filtered_items = {
         visible = true, -- when true, they will just be displayed differently than normal items
