@@ -49,8 +49,6 @@ vim.g.netrw_mouse = 2
 
 vim.g.autoformat = false
 
-vim.g.root_spec = { "cwd", "lsp", { ".git", "lua" } }
-
 opt.clipboard = {
   "unnamed",
   "unnamedplus"
