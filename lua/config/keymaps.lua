@@ -12,6 +12,10 @@ wk.register({
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+-- Remap default <leader><space> to always search from project root, which is
+-- unintuitively called "cwd"
+keymap("n", "<leader><space>", LazyVim.telescope("files", { cwd = false }), { remap = true, desc = "Find Files (cwd)" })
+
 local function copy_file_name()
   local path = vim.fn.expand("%:t")
   vim.fn.setreg("+", path)
