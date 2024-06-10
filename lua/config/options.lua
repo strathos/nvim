@@ -49,6 +49,9 @@ vim.g.netrw_mouse = 2
 
 vim.g.autoformat = false
 
+-- vim.g.lazyvim_python_lsp = "basedpyright"
+vim.g.lazyvim_python_ruff = "ruff_lsp"
+
 opt.clipboard = {
   "unnamed",
   "unnamedplus"
