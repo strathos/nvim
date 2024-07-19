@@ -2,11 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local wk = require("which-key")
-wk.register({
-  ["<leader>m"] = { name = "+misc", mode = { "n", "v" } },
-  ["<leader>gh"] = { name = "+Gitsigns", mode = { "n", "v" } },
-  ["<leader>gD"] = { name = "+Diffget", mode = { "n" } },
+require("which-key").add({
+  { "<leader>gD", group = "Diffget" },
+  { "<leader>m", group = "misc", mode = { "n", "v" } },
 })
 
 local keymap = vim.keymap.set
