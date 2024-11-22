@@ -15,5 +15,9 @@ return {
         select = true,
       })
     })
+    table.insert(opts.sources, {
+      name = "codeium",
+      group_index = 1
+    })
   end,
 }
