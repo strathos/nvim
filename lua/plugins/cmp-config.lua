@@ -13,7 +13,8 @@ return {
       ["<S-CR>"] = cmp.mapping.confirm({
         behavior = cmp.ConfirmBehavior.Replace,
         select = true,
-      })
+      }),
+      ["<C-Space>"] = cmp.mapping.complete(),
     })
     table.insert(opts.sources, {
       name = "codeium",
