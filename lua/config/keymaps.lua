@@ -35,7 +35,7 @@ end
 keymap("n", "<leader>bn", vim.cmd.enew, { desc = "New empty buffer" })
 
 keymap("n", "<leader>fc", copy_file_name, { desc = "Copy filename" })
-keymap("n", "<leader>fC", copy_relative_path, { desc = "Copy relative path" })
+keymap("n", "<leader>fD", copy_relative_path, { desc = "Copy relative path" })
 keymap("n", "<leader>fd", copy_absolute_path, { desc = "Copy absolute path" })
 
 -- Stay in indent mode
