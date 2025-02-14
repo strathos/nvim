@@ -1,3 +1,4 @@
+-- Configu
 return {
   {
     "Exafunction/codeium.nvim",
@@ -26,6 +27,14 @@ return {
   {
     "saghen/blink.cmp",
     opts = {
+      completion = {
+        list = {
+          selection = {
+            preselect = false,
+            auto_insert = false
+          }
+        },
+      },
       sources = {
         compat = { "codeium" },
         providers = {
