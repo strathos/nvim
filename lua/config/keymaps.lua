@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 
 require("which-key").add({
+  { "<leader>cw", group = "WhichPy" },
   { "<leader>gD", group = "Diffget" },
   { "<leader>m", group = "misc", mode = { "n", "v" } },
 })
