@@ -51,9 +51,9 @@ vim.g.autoformat = false
 
 vim.g.root_spec = { "cwd", { ".git", "lua" } }
 
--- vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_python_ruff = "ruff_lsp"
 
+vim.g.clipboard = "osc52"
 opt.clipboard = {
   "unnamed",
   "unnamedplus"
