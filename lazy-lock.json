@@ -8,7 +8,6 @@
   "buffer-reopen.nvim": { "branch": "main", "commit": "e08dfc4bfea21bbb771f24e1dd032b437a0f8401" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "catppuccin": { "branch": "main", "commit": "ce8d176faa4643e026e597ae3c31db59b63cef09" },
-  "codeium.nvim": { "branch": "main", "commit": "821b570b526dbb05b57aa4ded578b709a704a38a" },
   "conform.nvim": { "branch": "master", "commit": "5420c4b5ea0aeb99c09cfbd4fd0b70d257b44f25" },
   "csvview.nvim": { "branch": "main", "commit": "1f409951516db0d5babaa1f44842a9a882babdd3" },
   "dial.nvim": { "branch": "master", "commit": "f2634758455cfa52a8acea6f142dcd6271a1bf57" },
