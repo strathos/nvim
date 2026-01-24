@@ -3,12 +3,8 @@ return {
     "mason-org/mason.nvim",
     lazy = false,
     opts = {
-      ensure_installed = {
-        "shellcheck",
-        "ansible-language-server",
-        "ansible-lint",
-        "hadolint",
-      },
+      auto_update = false,
+      ensure_installed = {},
     }
   },
   {
