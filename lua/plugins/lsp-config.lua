@@ -19,6 +19,15 @@ return {
     lazy = false,
     opts = {
       servers = {
+        lua_ls = {
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = { "vim" },
+              },
+            },
+          },
+        },
         yamlls = {
           settings = {
             yaml = {
