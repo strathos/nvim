@@ -34,36 +34,43 @@ return {
     window = {
       mappings = {
         ["<space>"] = "none",
-        -- https://github.com/nvim-neo-tree/neo-tree.nvim/discussions/370#discussioncomment-4144005
         ['Y'] = function(state)
           local node = state.tree:get_node()
+          if not node or not node.id then
+            vim.notify("No node selected.", vim.log.levels.WARN)
+            return
+          end
+
+          if vim.fn.has('clipboard') == 0 then
+            vim.notify("System clipboard is not available.", vim.log.levels.ERROR)
+            return
+          end
+
           local filepath = node:get_id()
           local filename = node.name
           local modify = vim.fn.fnamemodify
 
-          local results = {
-            filepath,
-            modify(filepath, ':.'),
-            modify(filepath, ':~'),
-            filename,
-            modify(filename, ':r'),
-            modify(filename, ':e'),
+          local choices = {
+            { label = "Path relative to CWD",       value = modify(filepath, ':.') },
+            { label = "Absolute path",              value = filepath },
+            { label = "Filename",                   value = filename },
+            { label = "Filename without extension", value = modify(filename, ':r') },
+            { label = "Extension of the filename",  value = modify(filename, ':e') },
           }
 
-          vim.ui.select({
-            'Absolute path: ' .. results[1],
-            'Path relative to CWD: ' .. results[2],
-            'Path relative to HOME: ' .. results[3],
-            'Filename: ' .. results[4],
-            'Filename without extension: ' .. results[5],
-            'Extension of the filename: ' .. results[6],
-          }, { prompt = 'Choose to copy to clipboard:' }, function(_, idx)
-            if not idx then
+          require("snacks").picker.select(choices, {
+            prompt = 'Choose what to copy to clipboard:',
+            format_item = function(item)
+              return string.format("%-30s %s", item.label, item.value)
+            end
+          }, function(choice)
+            if not choice then
+              vim.notify("Copy cancelled.", vim.log.levels.INFO)
               return
             end
-            local result = results[idx]
-            vim.fn.setreg('+', result)
-            vim.notify('Copied: ' .. result)
+
+            vim.fn.setreg('+', choice.value)
+            vim.notify('Copied to clipboard: ' .. choice.value)
           end)
         end
       },
