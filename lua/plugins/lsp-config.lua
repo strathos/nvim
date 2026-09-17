@@ -28,6 +28,7 @@ return {
             },
           },
         },
+        robotframework_ls = {},
         yamlls = {
           settings = {
             yaml = {

@@ -4,16 +4,12 @@ return {
   build = ":TSUpdate",
   opts = {
     auto_install = true,
+    ensure_installed = { "robot" },
     highlight = {
       enable = true,
-      disable = function(_, buf)
-        local max_filesize = 2 * 1000 * 1024 -- 2 MB
-        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-        if ok and stats and stats.size > max_filesize then
-          vim.notify("Tree sitter disabled")
-          return true
-        end
-      end,
+      -- tree-sitter-robot cannot parse valid data-driven continuation rows.
+      -- Use robotframework-vim for Robot files instead.
+      disable = { "robot" },
     }
   }
 }
