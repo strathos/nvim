@@ -73,3 +73,6 @@ if vim.fn.has("wsl") == 1 then
     cache_enabled = 0,
   }
 end
+
+-- LazyVim handles SQL completion; disable built-in mappings to sqlcomplete.
+vim.g.omni_sql_no_default_maps = true
