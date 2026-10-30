@@ -53,11 +53,24 @@ vim.g.root_spec = { "cwd", { ".git", "lua" } }
 
 vim.g.lazyvim_python_ruff = "ruff_lsp"
 
-vim.g.clipboard = "osc52"
-opt.clipboard = {
-  "unnamed",
-  "unnamedplus"
+opt.clipboard = "unnamedplus"
+
+local osc52 = require("vim.ui.clipboard.osc52")
+local function internal_paste()
+  return { vim.fn.getreg('"', 1, true), vim.fn.getregtype('"') }
+end
+vim.g.clipboard = {
+  name = "OSC 52 (copy only)",
+  copy = {
+    ["+"] = osc52.copy("+"),
+    ["*"] = osc52.copy("*"),
+  },
+  paste = {
+    ["+"] = internal_paste,
+    ["*"] = internal_paste,
+  },
 }
+-- vim.g.clipboard = "osc52"
 
 if vim.fn.has("wsl") == 1 then
   vim.g.clipboard = {
